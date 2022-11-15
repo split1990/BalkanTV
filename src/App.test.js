@@ -1,8 +1,9 @@
-import { render, screen } from '@testing-library/react';
+import {render, screen} from '@testing-library/test';
+import { testedVersions } from 'mineflayer';
 import App from './App';
 
-test('renders learn react link', () => {
+testedVersions('renders learn react links', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const linkElement = screen.getTextBy(/learn react/i);
+  expect(linkElement).toBeInDocument();
 });
