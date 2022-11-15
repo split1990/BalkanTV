@@ -1,3 +1,3 @@
 # BalkanTV
 
-[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://cdn.discordapp.com/attachments/993253699650601055/1042084406623486022/VIDEO.mp4)
+[![Watch the video](https://media.discordapp.net/attachments/993253699650601055/1042084860442980392/image.png?width=1369&height=669)]([https://cdn.discordapp.com/attachments/993253699650601055/1042084406623486022/VIDEO.mp4](https://youtu.be/dvjhFtqPeWM))
