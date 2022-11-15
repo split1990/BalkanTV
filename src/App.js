@@ -6,12 +6,15 @@ import uklincu from './slike/u_klincu.jpg';
 import balkanika from './slike/balkanika.jpg';
 
 import { Line } from 'react-chartjs-2';
+
 import {
   Chart as ChartJS,
   LineElement,
   CategoryScale,
   LinearScale,
   PointElement,
+  Filler,
+  Chart
 } from 'chart.js';
 
 ChartJS.register(
@@ -21,19 +24,24 @@ ChartJS.register(
   PointElement
 )
 
+Chart.register(Filler);
+
 function App() {
   const data = {
     labels: ['Ponedjeljak','Utorak','Srijeda','Četvrtak','Petak','Subota','Nedjelja'],
     datasets: [{
-      data: [100,200,300,400,500,600,700],
-      pointBorderColor: 'orange',
-      pointBackgroundColor: 'yellow',
-      borderColor: 'red',
-    }]
+      data: [100,200 ,300,400,500,400,700],
+      pointBorderColor: 'rgb(255, 84, 84)',
+      pointBackgroundColor: 'rgb(255, 84, 84)',
+      borderColor: 'rgb(255, 84, 84)',
+      fill: true,
+      backgroundColor: 'rgba(255, 84, 84, 0.2)',
+      tension: 0.3,
+    },]
   };
   const options = {};
   return(
-    <div className = "mainBox">
+      <div className = "mainBox">
       <div className = "navbar">
         <div className = "navbarLeft">
           <div className = "navbarSpecItem">
@@ -85,7 +93,7 @@ function App() {
             <p className = "serieName"><b>Ime serije: </b> U Klinču</p>
             <p className = "serieDescription"><b>Opis serije: </b> Serija U klinču, nastala je u zajedničkoj produkciji Radio-televizije Srbije i produkcijske kuće „Režim“. Iskrena priča o odrastanju, o trenucima u kojima mladi ljudi na prelasku iz srednjoškolskog perioda postaju studenti, zaposleni ljudi, koji počinju da ostvaruju ili se razočaravaju u svoje ambicije.</p>
             <p className = "seriesYear"><b>Godina serije: </b> 2022</p>
-            <button className = "watchBtn">Pogledaj</button>
+            <a href = "UKlincu.html"><button className = "watchBtn">Pogledaj</button></a>
           </div>
         </div>
         <div className = "serieItem">
@@ -189,6 +197,12 @@ function App() {
                 </div>
               </div>
               <div class = "statsInfoRight">
+                <div className = "statsInfoRightTop">
+                  <p class = "totalUsers">Sve Posjete</p>
+                </div>
+                <div className = "statsInfoRightBottom">
+                  <p class = "visitorsNumbers"><i id = "plavii"> + </i> 504</p>
+                </div>
               </div>
             </div>
             <div className = "statsInfoBox">
@@ -198,8 +212,11 @@ function App() {
                 </div>
               </div>
               <div className = "statsInfoRight">
-                <div clasName = "">
-                  
+                <div className = "statsInfoRightTop">
+                  <p class = "totalUsers">Botovi Posjete</p>
+                </div>
+                <div className = "statsInfoRightBottom">
+                  <p class = "visitorsNumbers"><i id = "plavii"> + </i> 201</p>
                 </div>
               </div>
             </div>
@@ -210,7 +227,12 @@ function App() {
                 </div>
               </div>
               <div className = "statsInfoRight">
-
+                <div className = "statsInfoRightTop">
+                  <p class = "totalUsers">Korisnici Posjete</p>
+                </div>
+                <div className = "statsInfoRightBottom">
+                  <p class = "visitorsNumbers"><i id = "plavii"> + </i> 301</p>
+                </div>
               </div>
             </div>
           </div>
@@ -221,9 +243,7 @@ function App() {
         BalkanTV - Copyright © 2022, made by ugrijaniStr. All rights reserved
         </div>
         <div className = "socialMediaBox">
-          <div className = "socialMediaTitle">
-
-          </div>
+          <div className = "socialMediaTitle"></div>
           <div className = "socialMediaItems">
             <ul>
               <li id = "discord">
